@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Quizzes Tecmilenio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .hub { max-width: 880px; text-align: left; }
+    .hub h1 { text-align: center; }
+    .hub > .lead-text { text-align: center; }
+    .cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 8px; }
+    .card {
+      display: flex; flex-direction: column; gap: 8px;
+      padding: 20px; background: var(--c-surface);
+      border: 2px solid var(--c-border); border-radius: var(--radius);
+      color: inherit; text-decoration: none; transition: border-color .15s, transform .15s;
+    }
+    .card:hover { border-color: var(--c-accent); transform: translateY(-2px); }
+    .card:focus-visible { outline: 3px solid var(--c-question); outline-offset: 3px; }
+    .card__tag { font-size: .75rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--c-accent); margin: 0; }
+    .card h2 { font-size: 1.15rem; margin: 0; }
+    .card p { margin: 0; color: var(--c-muted); font-size: .92rem; }
+    .card__go { margin-top: auto; padding-top: 8px; font-weight: 600; color: var(--c-accent); }
+  </style>
+</head>
+<body>
+  <main class="quiz">
+    <div class="stage">
+      <section class="screen hub">
+        <h1>Quizzes Tecmilenio</h1>
+        <p class="lead-text">Elige un quiz para recorrerlo de principio a fin, tal como lo verá un prospecto.</p>
+        <div class="cards">
+          <a class="card" href="lm2/">
+            <p class="card__tag">LM #2 · Comercio Internacional</p>
+            <h2>¿Tu futuro está en el comercio global?</h2>
+            <p>30 afirmaciones en 5 secciones. Da un nivel de afinidad con la carrera y un ADN profesional.</p>
+            <span class="card__go">Abrir quiz →</span>
+          </a>
+          <a class="card" href="lm3/">
+            <p class="card__tag">LM #3 · Comercio y Negocios Internacionales</p>
+            <h2>Descubre qué ruta es para ti</h2>
+            <p>7 preguntas para saber si tu enfoque es Negocios Internacionales o Logística.</p>
+            <span class="card__go">Abrir quiz →</span>
+          </a>
+          <a class="card" href="lm4/">
+            <p class="card__tag">LM #4 · Mercadotecnia</p>
+            <h2>Descubre qué ruta de Mercadotecnia va contigo</h2>
+            <p>7 preguntas y 4 rutas posibles: ventas, inteligencia de mercados, digital y publicidad.</p>
+            <span class="card__go">Abrir quiz →</span>
+          </a>
+          <a class="card" href="connect/">
+            <p class="card__tag">Blog · Connect</p>
+            <h2>¿Qué tan Connect eres?</h2>
+            <p>16 preguntas de sí o no para calcular qué tan afín eres a la modalidad híbrida.</p>
+            <span class="card__go">Abrir quiz →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
