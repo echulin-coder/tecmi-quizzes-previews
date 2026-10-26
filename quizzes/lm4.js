@@ -2,6 +2,7 @@
 // Réplica del Typeform szAZJReD con las correcciones de la auditoría del 06-oct-2026:
 // sin bloque de contacto duplicado, etiquetas en español, opciones en orden aleatorio
 // y desempate explícito.
+// 26-oct-2026: la pregunta 7 ya no suma puntos, solo desempata (antes contaba doble).
 
 export default {
   id: 'lm4',
@@ -15,7 +16,8 @@ export default {
     button: 'Comenzar',
   },
 
-  // Cada opción suma 1 punto a su ruta. Gana la ruta con más puntos.
+  // Cada opción suma 1 punto a su ruta, salvo la pregunta 7, que vale 0 y solo desempata.
+  // Gana la ruta con más puntos.
   outcomes: [
     {
       id: 'ventas_estrategicas',
@@ -47,6 +49,7 @@ export default {
     type: 'classification',
     // En empate decide la respuesta de la última pregunta ("si hoy tuvieras que
     // elegir"); si sigue empatado, la primera. Typeform no tenía regla explícita.
+    // La q7 solo desempata: sus opciones valen 0 puntos y no suman a ninguna ruta.
     tiebreak: ['q7', 'q1'],
   },
 
@@ -137,13 +140,14 @@ export default {
     {
       id: 'q7',
       title: 'Si hoy tuvieras que elegir, ¿qué te entusiasma más?',
+      // Solo desempata (scoring.tiebreak): por eso sus opciones valen 0 puntos.
       type: 'single',
       randomize: true,
       options: [
-        { id: 'q7_v', label: 'Cerrar una oportunidad y construir una relación comercial', outcome: 'ventas_estrategicas' },
-        { id: 'q7_m', label: 'Encontrar un insight que cambie una decisión', outcome: 'inteligencia_mercados' },
-        { id: 'q7_b', label: 'Mejorar el desempeño de un canal digital', outcome: 'buscadores_ecommerce' },
-        { id: 'q7_p', label: 'Crear una campaña que conecte con las personas', outcome: 'estrategia_publicitaria' },
+        { id: 'q7_v', label: 'Cerrar una oportunidad y construir una relación comercial', outcome: 'ventas_estrategicas', points: 0 },
+        { id: 'q7_m', label: 'Encontrar un insight que cambie una decisión', outcome: 'inteligencia_mercados', points: 0 },
+        { id: 'q7_b', label: 'Mejorar el desempeño de un canal digital', outcome: 'buscadores_ecommerce', points: 0 },
+        { id: 'q7_p', label: 'Crear una campaña que conecte con las personas', outcome: 'estrategia_publicitaria', points: 0 },
       ],
     },
   ],

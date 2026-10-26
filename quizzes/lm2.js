@@ -7,6 +7,7 @@
 //   - "Solucionador Global" ya es alcanzable (dependía de una variable que nunca se calculaba);
 //   - la escala se explica como 1–4, igual que los botones;
 //   - se agregan aviso de privacidad, opt-in y UTMs como en LM #4.
+// 26-oct-2026: los rangos de nivel pasan a 0–35 / 36–70 / 71–90.
 
 const SCALE = [
   { value: 1, label: 'No me describe' },
@@ -116,27 +117,28 @@ export default {
 
   scoring: { type: 'sections' },
 
-  // Nivel según el puntaje total (0–90).
+  // Nivel según el puntaje total (0–90). Cortes del documento actualizado del cliente
+  // (26-oct-2026): antes estaban en 0–30 / 31–61 / 62–90.
   outcomes: [
     {
       id: 'exploracion_inicial',
       min: 0,
-      max: 30,
+      max: 35,
       title: 'Exploración inicial',
       description:
         'Sientes curiosidad, pero aún estás descubriendo si este es tu propósito. Conocer las bases y las realidades del día a día en esta área te ayudará a tomar una decisión informada.',
     },
     {
       id: 'perfil_bien_alineado',
-      min: 31,
-      max: 61,
+      min: 36,
+      max: 70,
       title: 'Perfil bien alineado',
       description:
         'Tus respuestas reflejan afinidad con los retos y dinámicas del entorno internacional. La formación profesional fortalecerá tus competencias estratégicas.',
     },
     {
       id: 'perfil_sobresaliente',
-      min: 62,
+      min: 71,
       max: 90,
       title: 'Perfil sobresaliente',
       description:
